@@ -1,4 +1,7 @@
 class UserSessionsController < ApplicationController
+
+  before_filter :require_no_user, :only => [:new, :create]
+  before_filter :require_user, :only => :destroy
   
   def new
     @user_session = UserSession.new
@@ -19,22 +22,6 @@ class UserSessionsController < ApplicationController
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @user_session.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-  
-  # PUT /user_sessions/1
-  # PUT /user_sessions/1.json
-  def update
-    @user_session = UserSession.find(params[:id])
-
-    respond_to do |format|
-      if @user_session.update_attributes(params[:user_session])
-        format.html { redirect_to @user_session, notice: 'User session was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @user_session.errors, status: :unprocessable_entity }
       end
     end
   end
