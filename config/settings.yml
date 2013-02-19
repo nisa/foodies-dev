@@ -1,4 +1,4 @@
-domain: localhost:3000
+domain: http://foodies-test-deployment.herokuapp.com
 facebook: 
   APP_ID: 475369315845616
   APP_SECRET: 13ce8ab6e56eaed6afd65bff058356fd
