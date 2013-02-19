@@ -12,7 +12,7 @@ class UserSessionsController < ApplicationController
     end
   end
   
-  def create
+  def create  
     @user_session = UserSession.new(params[:user_session])
  
     respond_to do |format|

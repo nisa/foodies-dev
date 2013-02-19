@@ -1,5 +1,11 @@
-<h1>New user_session</h1>
+<h1>Log In</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', user_sessions_path %>
+<div class="omniauth-connect">
+  <h1>OR</h1>
+  <h3>Log in with</h3>
+  <%= link_to image_tag("google_64.png"), '/auth/google_oauth2' %>
+  <%= link_to image_tag("facebook_64.png"), '/auth/facebook' %>
+</div>
+

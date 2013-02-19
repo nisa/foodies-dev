@@ -28,15 +28,15 @@ test:
   database: foodies_test
   pool: 5
   username: root
-  password:
+  password: tulips
   socket: /tmp/mysql.sock
 
 production:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   reconnect: false
   database: foodies_production
   pool: 5
   username: root
-  password:
+  password: tulips
   socket: /tmp/mysql.sock

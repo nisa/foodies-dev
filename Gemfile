@@ -6,9 +6,11 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
+gem 'omniauth'
+gem "omniauth-facebook"
+gem "omniauth-google-oauth2"
 
 # Authentication module
-
 gem 'authlogic'
 
 
@@ -25,6 +27,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'pg'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
