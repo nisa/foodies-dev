@@ -12,7 +12,7 @@ class AuthorizationsController < ApplicationController
     else
       user = User.new
       user.apply_omniauth(omniauth)
-      user.reset_persistance_token
+      user.reset_persistence_token
       if user.save!
         Authorization.create({:user_id => user.id, :provider => omniauth['provider'], :uid => omniauth['uid']}, :without_protection => true)
         flash[:notice] = "User created and signed in successfully."
