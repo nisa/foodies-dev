@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   acts_as_authentic do |c|
   	c.login_field = :email          # email is the login field
     c.validate_login_field = false
-    c.validate_password_field = false
   end
 
   def deliver_password_reset_instructions!
