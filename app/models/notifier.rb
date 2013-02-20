@@ -1,6 +1,5 @@
 class Notifier < ActionMailer::Base
-  default :from => "no-reply@fudys.com",
-          :url => "#{APP_CONFIG['domain']}"
+  default :from => "no-reply@fudys.com"
 
   def password_reset_instructions(user)
     @user = user
