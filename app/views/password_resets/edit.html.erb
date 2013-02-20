@@ -12,11 +12,11 @@
    <% end %>     
   <div class="field">
     <%= f.label :password %>
-    <%= f.text_field :password, :value => (params[:user]) ? params[:user][:password] : "" %>
+    <%= f.password_field :password, :value => (params[:user]) ? params[:user][:password] : "" %>
   </div>  
   <div class="field">
     <%= f.label :password_confirmation %>
-    <%= f.text_field :password_confirmation, :value => (params[:user]) ? params[:user][:password_confirmation] : "" %>
+    <%= f.password_field :password_confirmation, :value => (params[:user]) ? params[:user][:password_confirmation] : "" %>
   </div>
   <div class="actions">
     'Update my password and log me in' 
