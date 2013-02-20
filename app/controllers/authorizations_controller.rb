@@ -5,7 +5,7 @@ class AuthorizationsController < ApplicationController
     omniauth = request.env['omniauth.auth'] #this is where you get all the data from your provider through omniauth
     @auth = Authorization.find_from_hash(omniauth)
     @registered_user = User.find_by_email(omniauth['info']['email'])
-     p @registered_user
+
     if @auth
       flash[:notice] = "Welcome back #{omniauth['provider']} user."
       log_in_and_redirect(@auth.user)
