@@ -11,7 +11,6 @@ class AuthorizationsController < ApplicationController
       log_in_and_redirect(@auth.user)
     elsif @registered_user
         user = @registered_user
-        p "already registered: #{user}"
         Authorization.create({:user_id => user.id, :provider => omniauth['provider'], :uid => omniauth['uid']}, :without_protection => true)
         log_in_and_redirect(user)
         flash[:notice] = "Signed in successfully."
@@ -41,7 +40,6 @@ class AuthorizationsController < ApplicationController
 
   def log_in_and_redirect(user)
     unless current_user
-      p "user: #{user}"
       user_session = UserSession.new(User.find_by_single_access_token(user.single_access_token))
       user_session.save
     end
