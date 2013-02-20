@@ -69,9 +69,9 @@ Foodies::Application.configure do
   config.action_mailer.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => 587,
-  :domain               => 'baci.lindsaar.net',
+  :domain               => 'gmail.com',
   :user_name            => 'foodies.test.deployment',
   :password             => 'foodies_123',
-  :authentication       => 'plain',
+  :authentication       => 'login',
   :enable_starttls_auto => true  }
 end
